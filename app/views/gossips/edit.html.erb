@@ -1,0 +1,31 @@
+<div class="center jumbotron">
+
+
+<h1>Éditer mon gossip</h1>
+
+<p>
+Tape ici ton nouveau Gossip, petite balance :
+
+
+  <%= form_for @gossip do |f| %>
+<div class="form-group" >
+   <%= label_tag 'Pseudo :' %>
+   <%= f.text_field :anonymous_gossiper, class: "form-control" %> <br> <br> 
+</div>
+
+<div class="form-group" >
+    <%= label_tag 'Contenu :' %>
+    <%= f.text_area :content, class: "form-control" %> <br> <br>
+</div>
+
+<div class="form-group" >
+    <%= f.submit "Modifier mon gossip", class: "btn btn-primary" %>
+</div>
+
+  <% end %>
+
+</p>
+ <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+
+
+</div>

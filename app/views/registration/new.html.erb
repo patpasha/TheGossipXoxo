@@ -1,0 +1,23 @@
+
+<div class="center jumbotron">
+
+
+<br>
+<h1>Créer un compte</h1>
+<br>
+<%= form_for @user, url: {action: "create"} do |f| %>
+  <%= f.text_field :name, class: "form-control form-control-lg", placeholder: "Pseudo" %>
+  <br>
+  <%= f.text_field :email, class: "form-control form-control-lg", placeholder: "email@example.com" %>
+  <br>
+  <%= f.password_field :password, class: "form-control form-control-lg", placeholder: "Mot de passe" %>
+  <br>
+  <br>
+  <%= f.submit "Envoyer", class: "btn btn-primary btn-lg" %>
+<% end %>
+
+<br><br><br><br><br><br>
+<br><br><br>
+<br><br><br><br><br>
+
+</div>

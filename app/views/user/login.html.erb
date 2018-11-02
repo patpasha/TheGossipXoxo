@@ -1,0 +1,21 @@
+<div class="center jumbotron">
+
+
+<br>
+<h1>Connexion</h1>
+<br>
+<%= form_for '/users/login' do |f| %>
+  <%= f.text_field :name, class: "form-control form-control-lg", placeholder: "Pseudo" %>
+  <br>
+  <%= f.password_field :password, class: "form-control form-control-lg", placeholder: "Mot de passe" %>
+  <br>
+  <br>
+  <%= f.submit "Se connecter", class: "btn btn-primary btn-lg" %>
+<% end %>
+
+
+<br><br><br><br><br><br>
+<br><br><br>
+<br><br><br><br><br><br><br><br>
+
+</div>

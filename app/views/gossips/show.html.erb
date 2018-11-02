@@ -1,0 +1,58 @@
+<div class="center jumbotron">
+
+<h1> Page du gossip </h1> <br>
+
+<h5> <i>'' <%= @gossip.content %> ''</i> </h5>
+<div class= "form-group" >
+
+<%= link_to 'Éditer', edit_gossip_path(@gossip.id) %> |
+<%= link_to 'Retour', gossips_path %>
+
+<a href= "<%= gossip_path(@gossip.id) %>"" class='btn btn-danger' data-confirm="Êtes-vous sûr de vouloir supprimer ce gossip ? Cette action est irréversible." data-method="delete"> Supprimer </a>
+<br><br>
+
+
+
+ <h2>Commentaires: </h2>
+<% @gossip.comments.each do |key| %>
+  <p>
+
+    <strong>Commentaire:</strong>
+    <%= key.body %> <br>
+
+    <i> Pseudo: </i>
+    <strong><%= key.anonymous_commentor %> </strong> <br>
+
+  <%= link_to 'Supprimer le commentaire', gossip_comment_path(:gossip_id),
+               method: :delete,
+               data: { confirm: 'Es-tu sûr de vouloir supprimer ce commentaire ?' } %>
+</p>
+
+
+<% end %>
+
+
+
+</p>
+ 
+<h2>Ajouter un commentaire:</h2>
+<%= form_with(model: [ @gossip, @gossip.comments.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :anonymous_commentor %><br>
+    <%= form.text_field :anonymous_commentor %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+</div>
+ <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+
+
+</div>

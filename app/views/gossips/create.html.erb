@@ -1,0 +1,13 @@
+<h2> Félicitations <%= @gossip.anonymous_gossiper %>, j'espère que tu es content, tu es une petite balance vu que tu viens de créer un gossip ! </h2>
+
+<br> <br>
+
+<h3> Voilà ton gossip : </h3> <br> <br> 
+
+<h5> <%= @gossip.content %> </h5>   <br>
+
+<% @gossips.each do |key| %>
+
+<a href="<%= gossips_show_path(key.id) %>" class="btn btn-primary"> Modifier ce gossip </a>
+
+<% end %>
